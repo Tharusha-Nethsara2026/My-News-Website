@@ -1,0 +1,81 @@
+/* මුළු පිටුවේම පොදු සැකසුම් */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+/* ඉහළ තීරුව (Header) */
+header {
+    background-color: #c0392b;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.3rem;
+}
+
+header p {
+    margin: 10px 0 0 0;
+    opacity: 0.9;
+}
+
+/* පුවත් පෙට්ටි එක පෙළට පහළට සැකසීම */
+.news-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    padding-bottom: 80px;
+    display: block; /* පුවත් පහළට පෙන්වීමට */
+}
+
+/* සෑම පුවත් පෙට්ටියක්ම (News Card) */
+.news-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 6px solid #c0392b;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+/* පුවත් අංකය */
+.news-number {
+    background: #c0392b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* පුවත් අකුරු */
+.news-card p {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* පාදම (Footer) */
+footer {
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
