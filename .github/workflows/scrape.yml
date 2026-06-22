@@ -1,0 +1,35 @@
+name: Auto News Scraper
+
+on:
+  schedule:
+    # මෙයින් කියවෙන්නේ හැම පැය 6කට වරක්ම මේක ඉබේම Run වෙන්න කියන එකයි
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # ඔබට අවශ්‍ය ඕනෑම වෙලාවක බටන් එකක් ඔබලා මේක Run කරගන්නත් පුළුවන්
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install beautifulsoup4 requests
+
+    - name: Run Web Scraper
+      run: python script.py
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        git add index.html
+        git commit -m "Auto-updated news headlines" || exit 0
+        git push
